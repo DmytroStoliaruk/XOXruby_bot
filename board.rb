@@ -2,8 +2,8 @@ class Board
   MESSAGE_WINER = "Congratulation! You are winner".freeze
   MESSAGE_LOSER = "Sorry! Bot wins".freeze
   MESSAGE_DRAW = "Game over! Draw...".freeze
-  USER_MARK = "X".freeze
-  BOT_MARK  = "O".freeze
+  USER_MARK = "❌".freeze
+  BOT_MARK  = "⭕".freeze
   BOARD_RATE = [3, 2, 3, 2, 4, 2, 3, 2, 3].freeze
   RELATED_CELLS = {
     0 => [[1, 2], [3, 6], [4, 8]],
