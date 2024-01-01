@@ -39,13 +39,20 @@ class Board
   private
   
   def bot_step
-    cell_number = @boardRate.each_with_index.max[1]
+    cell_number = bot_find_next_step
     next_step(cell_number , BOT_MARK)
   end 
 
   def user_step(cell_number)
     next_step(cell_number - 1, USER_MARK)
   end  
+
+  def bot_find_next_step
+    max_cell_rate = @boardRate.max
+    cells_with_max_rate = @boardRate.each_with_index.select { |elem, index| elem == max_cell_rate }
+    next_step = rand(0..cells_with_max_rate.length - 1)  # random coise from cells with equal rate
+    cells_with_max_rate[next_step][1]
+  end
 
   def next_step(cell_number, mark)
     return if @boardRate[cell_number] == 0
